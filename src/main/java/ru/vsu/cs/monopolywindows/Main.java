@@ -1,11 +1,10 @@
-package cz.cvut.fel.pvj.nejedly.monopoly;
+package ru.vsu.cs.monopolywindows;
 
-import cz.cvut.fel.pvj.nejedly.monopoly.controller.GameController;
+import ru.vsu.cs.monopolywindows.controller.GameController;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.logging.*;
 
 public class Main extends Application {
 
@@ -30,9 +29,15 @@ public class Main extends Application {
      */
     @Override
     public void start(Stage primaryStage) {
-        GameController gameController = new GameController();
-        gameController.initialize();
+        try {
+
+            GameController gameController = new GameController();
+            gameController.initialize();
+        } catch (Exception ex){
+            System.out.println(ex.toString());
+        }
     }
+
 
 
 }

@@ -1,9 +1,9 @@
-package cz.cvut.fel.pvj.nejedly.monopoly.view;
+package ru.vsu.cs.monopolywindows.view;
 
-import cz.cvut.fel.pvj.nejedly.monopoly.controller.GameController;
-import cz.cvut.fel.pvj.nejedly.monopoly.model.GameModel;
-import cz.cvut.fel.pvj.nejedly.monopoly.model.board.squares.*;
-import cz.cvut.fel.pvj.nejedly.monopoly.model.player.Player;
+import ru.vsu.cs.monopolywindows.controller.GameController;
+import src.logic.GameModel;
+import src.logic.board.squares.*;
+import src.logic.player.Player;
 import javafx.beans.Observable;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -20,10 +20,8 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.logging.Logger;
 
 public class GameView {
-    private final static Logger LOGGER = Logger.getLogger(GameView.class.getName());
     private final GameModel gameModel;
     private final GameController controller;
     private final Scene scene;
@@ -55,10 +53,7 @@ public class GameView {
         saveGameButton.setOnAction(actionEvent -> controller.saveGameButtonPressed(scene));
         sprites = createSpriteImageViews();
     }
-    /**
-     * Initializes the GameView by setting up the scene, adding stylesheets,
-     * and initializing the BorderPanes for the left, center, and right sections of the view.
-     */
+
     public void init() {
 
 
@@ -224,7 +219,7 @@ public class GameView {
         rentColumn.setCellValueFactory(data -> {
             Ownable ownable = data.getValue();
             if (ownable instanceof Utility) {
-                return new SimpleStringProperty("4 * (dice)\n10 * (dice)");
+                return new SimpleStringProperty("4 * (кубик)\n10 * (кубик)");
             }
             return new SimpleStringProperty(Integer.toString(ownable.getRent()));
         });
@@ -282,16 +277,7 @@ public class GameView {
         return endTurnButton;
     }
 
-    /**
-     * Displays a dialog box for selling a property
-     *
-     * <p>Displays a dialog box with a combo box listing the player's owned squares
-     * and a "Sell property" button to initiate the sale. The dialog also includes a "Cancel" button
-     * to close the dialog without taking any action.</p>
-     *
-     * @param comboBox   a ComboBox object containing the list of owned squares to be displayed in the dialog
-     * @param sellButton a Button object that initiates the sale of the selected property when pressed
-     */
+
     public void showSellPropertyDialog(ComboBox<Ownable> comboBox, Button sellButton) {
 
         VBox vbox = new VBox();

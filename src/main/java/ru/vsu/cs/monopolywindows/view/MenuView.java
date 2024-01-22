@@ -1,6 +1,6 @@
-package cz.cvut.fel.pvj.nejedly.monopoly.view;
+package ru.vsu.cs.monopolywindows.view;
 
-import cz.cvut.fel.pvj.nejedly.monopoly.controller.GameController;
+import ru.vsu.cs.monopolywindows.controller.GameController;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -11,10 +11,8 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.util.logging.Logger;
 
 public class MenuView {
-    private final static Logger LOGGER = Logger.getLogger(MenuView.class.getName());
     private final Scene scene;
     private final Pane pane;
     private final GameController controller;
@@ -32,7 +30,6 @@ public class MenuView {
      * Sets the scene style, pane size, and adds UI elements for starting a new game, loading a game, and exiting the program.
      */
     public void init() {
-        LOGGER.info("Initialize MenuView.");
 
         scene.getStylesheets().add("/stylesheets/MenuViewStyles.css");
         pane.setPrefSize(700, 700);
@@ -57,7 +54,6 @@ public class MenuView {
             newGameLabel,
             createNewGameControls(2, 2),
             createNewGameControls(3, 4),
-            createNewGameControls(1,7),
             otherLabel,
             loadGameButton,
             exitButton
