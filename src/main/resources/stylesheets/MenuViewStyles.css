@@ -1,0 +1,36 @@
+.root {
+    -fx-background-image: url("../images/board_menu.jpeg");
+    -fx-background-size: cover;
+    -fx-font-family: "Arial Black";
+    -fx-alignment: center;
+    -fx-spacing: 20;
+}
+
+#heading1 {
+    -fx-font-size: 40;
+}
+
+#heading2 {
+    -fx-font-size: 30;
+}
+
+HBox {
+    -fx-alignment: center;
+    -fx-spacing: 20;
+}
+
+.button {
+    -fx-background-color: #EA2227;
+    -fx-text-fill: white;
+    -fx-font-size: 18;
+    -fx-border-color: black;
+    -fx-border-width: 3;
+    -fx-border-insets: -2;
+    -fx-graphic-text-gap: 2;
+}
+
+.button:hover {
+    -fx-background-color: #CDE6D0;
+    -fx-text-fill: black;
+    -fx-cursor: hand;
+}
